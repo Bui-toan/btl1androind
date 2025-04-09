@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Play Music</string>
+
+    <string name="search">Tìm kiếm</string>
+    <string name="favorites">Ưa thích</string>
+    <string name="ok">OK</string>
+    <string name="start_time">0.00</string>
+    <string name="final_time">0.00</string>
+    <string name="search_hint">Song Name</string>
+    <string name="no">Không</string>
+    <string name="yes">Xóa</string>
+    <string name="delete">Xóa</string>
+    <string name="delete_text"> Bạn có muốn xóa bài hát này ???</string>
+</resources>
