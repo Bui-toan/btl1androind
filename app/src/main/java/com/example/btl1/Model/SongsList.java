@@ -1,7 +1,9 @@
 package com.example.btl1.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class SongsList {
+public class SongsList implements Parcelable {
 
     private String title;
     private String artistTitle;
@@ -13,28 +15,42 @@ public class SongsList {
         this.path = path;
     }
 
-    public String getSongsTitle() {
-        return title;
+    protected SongsList(Parcel in) {
+        title = in.readString();
+        artistTitle = in.readString();
+        path = in.readString();
     }
 
-    public void setSongsTitle(String title) {
-        this.title = title;
+    public static final Creator<SongsList> CREATOR = new Creator<SongsList>() {
+        @Override
+        public SongsList createFromParcel(Parcel in) {
+            return new SongsList(in);
+        }
+
+        @Override
+        public SongsList[] newArray(int size) {
+            return new SongsList[size];
+        }
+    };
+
+    public String getSongsTitle() { return title; }
+    public void setSongsTitle(String title) { this.title = title; }
+
+    public String getArtistTitle() { return artistTitle; }
+    public void setArtistTitle(String artistTitle) { this.artistTitle = artistTitle; }
+
+    public String getPath() { return path; }
+    public void setPath(String path) { this.path = path; }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public String getArtistTitle() {
-        return artistTitle;
-    }
-
-    public void setArtistTitle(String artistTitle) {
-        this.artistTitle = artistTitle;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(artistTitle);
+        dest.writeString(path);
     }
 }
-

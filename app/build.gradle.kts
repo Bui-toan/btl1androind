@@ -42,6 +42,8 @@
         implementation(libs.material)
         implementation(libs.activity)
         implementation(libs.constraintlayout)
+        implementation("androidx.media:media:1.6.0")
+        implementation("androidx.cardview:cardview:1.0.0")
 
         testImplementation(libs.junit)
         androidTestImplementation(libs.ext.junit)

@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Màu chủ đạo hiện tại -->
     <color name="colorPrimary">#45b5ec</color>
     <color name="colorPrimaryDark">#1c8fc7</color>
     <color name="colorAccent">#000000</color>
 
+    <!-- Màu chữ, nền, giao diện tối -->
     <color name="TextColor">#ffffff</color>
     <color name="color_black">#000000</color>
-    <color name="drawer_color">#335763</color>
+    <color name="drawer_color">#1a1a1a</color> <!-- Sidebar tối -->
     <color name="light_color">#fafafa</color>
-    <color name="OffColor">#A845de</color>
+    <color name="OffColor">#121212</color> <!-- nền chính tối -->
     <color name="gray_color">#9c9b9b</color>
+    <color name="purple_700">#7B1FA2</color>
 
+    <!-- 🎶 GỢI Ý MÀU MỚI CHO DARK MODE 🎶 -->
+    <color name="dark_background">#121212</color>         <!-- Background nền chính -->
+    <color name="dark_surface">#1E1E1E</color>            <!-- Card hoặc khung nổi -->
+    <color name="dark_secondary">#BB86FC</color>          <!-- Accent đẹp kiểu Spotify -->
+    <color name="dark_onPrimary">#E1E1E1</color>          <!-- Text nổi trên nền tối -->
+    <color name="dark_highlight">#03DAC5</color>          <!-- Highlight (nhấn vào) -->
+    <color name="dark_divider">#333333</color>            <!-- Divider/ListView separator -->
+
+    <!-- Màu nhấn -->
+    <color name="play_button_color">#1DB954</color>       <!-- Màu nút Play kiểu Spotify -->
+    <color name="favorite_heart_color">#FF4081</color>    <!-- Trái tim hoặc yêu thích -->
 </resources>

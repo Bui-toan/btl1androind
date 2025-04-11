@@ -10,65 +10,90 @@
     <RelativeLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/color_black">
 
+        <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#8005B4"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
-        <LinearLayout
-            android:id="@+id/ll_include_controls"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <!-- FrameLayout chứa các Fragment như Album, Search, AllSong, Player -->
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_nav"
             android:layout_below="@id/Toolbar"
-            android:orientation="vertical">
+            android:background="@color/dark_divider" />
 
-            <include layout="@layout/player_layout" />
-        </LinearLayout>
-
+        <!-- Bottom Navigation Tabs -->
         <LinearLayout
-            android:id="@+id/ll_tab_layout"
+            android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_below="@id/ll_include_controls"
-            android:background="@color/colorPrimary">
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/background"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/TabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="10dp"
-                app:tabBackground="@color/colorPrimary"
-                app:tabGravity="fill"
-                app:tabIndicatorColor="@color/colorPrimary"
-                app:tabMode="fixed"
-                app:tabSelectedTextColor="@color/OffColor"
-                app:tabTextColor="@color/TextColor"
-                android:contentDescription="Chuyển đổi giữa danh sách bài hát và danh sách yêu thích"/>
+            <!-- Tab: Home -->
+            <LinearLayout
+                android:id="@+id/tabHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <ImageView
+                    android:id="@+id/iconHome"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icontrangchu"
+                    app:tint="@color/TextColor" />
+
+                <TextView
+                    android:id="@+id/textHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TRANG CHỦ"
+                    android:textColor="@color/TextColor"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Tab: Search -->
+            <LinearLayout
+                android:id="@+id/tabSearch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <ImageView
+                    android:id="@+id/iconSearch"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icontimkiem"
+                    app:tint="@color/TextColor" />
+
+                <TextView
+                    android:id="@+id/textSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TÌM KIẾM"
+                    android:textColor="@color/TextColor"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/ViewPager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ll_tab_layout"
-            android:importantForAccessibility="no"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/FloatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="15dp"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/refresh_icon"
-            android:contentDescription="Làm mới danh sách bài hát"
-            app:backgroundTint="@color/colorPrimary" />
     </RelativeLayout>
-
 </androidx.drawerlayout.widget.DrawerLayout>

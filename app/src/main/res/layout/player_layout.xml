@@ -2,81 +2,49 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:background="@color/colorPrimary">
+    android:layout_height="wrap_content"
+    android:background="#252525"
+    android:padding="12dp">
 
-    <LinearLayout
-        android:id="@+id/ll_player_controls"
+    <!-- 🎵 Tên bài hát (center) -->
+    <TextView
+        android:id="@+id/TextViewSongTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Tên bài hát"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/ImageButtonReplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/undo_icon" />
-
-        <ImageButton
-            android:id="@+id/ImageButtonPrevious"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/previous_icon" />
-
-        <ImageButton
-            android:id="@+id/ImageButtonPlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/play_icon" />
-
-        <ImageButton
-            android:id="@+id/ImageButtonNext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/next_icon" />
-
-        <ImageButton
-            android:id="@+id/ImageButtonSetting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/ic_settings" />
-    </LinearLayout>
-
+    <!-- ⏱ Seekbar và thời gian -->
     <LinearLayout
+        android:id="@+id/layout_seek"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ll_player_controls"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
+        android:layout_below="@id/TextViewSongTitle"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/TextViewStartTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/start_time"
+            android:text="00:00"
             android:textColor="@color/TextColor"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <SeekBar
             android:id="@+id/SeekBar"
-            android:layout_width="250dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/TextColor"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
             android:progressTint="@color/TextColor"
             android:thumbTint="@color/TextColor" />
 
@@ -84,10 +52,73 @@
             android:id="@+id/TextViewFinalTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/final_time"
+            android:text="00:00"
             android:textColor="@color/TextColor"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- 🎧 Điều khiển phát nhạc -->
+    <LinearLayout
+        android:id="@+id/ll_player_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_seek"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <!-- 🔁 Replay -->
+        <ImageButton
+            android:id="@+id/ImageButtonReplay"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="Replay"
+            android:src="@drawable/undo_icon"
+            app:tint="@android:color/white" />
+
+        <!-- ⏮ Previous -->
+        <ImageButton
+            android:id="@+id/ImageButtonPrevious"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="Previous"
+            android:src="@drawable/previous_icon" />
+
+        <!-- ▶️ Play -->
+        <ImageButton
+            android:id="@+id/ImageButtonPlay"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1.5"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="Play/Pause"
+            android:src="@drawable/play_icon" />
+
+        <!-- ⏭ Next -->
+        <ImageButton
+            android:id="@+id/ImageButtonNext"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="Next"
+            android:src="@drawable/next_icon" />
+
+        <!-- ❤️ Favorite -->
+        <ImageButton
+            android:id="@+id/ImageButtonFavorite"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="Favorite"
+            android:src="@drawable/favorite_icon"
+            app:tint="@android:color/white" />
+    </LinearLayout>
 </RelativeLayout>
