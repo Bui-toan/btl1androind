@@ -8,7 +8,6 @@
     android:paddingTop="16dp"
     android:paddingEnd="10dp">
 
-    <!-- Ảnh album -->
     <ImageView
         android:id="@+id/imageAlbum"
         android:layout_width="180dp"
@@ -20,7 +19,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/allsongalbum" />
 
-    <!-- Tên Album -->
     <TextView
         android:id="@+id/textAlbumTitle"
         android:layout_width="wrap_content"
@@ -33,7 +31,6 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <!-- Số lượng bài hát -->
     <TextView
         android:id="@+id/textSongCount"
         android:layout_width="wrap_content"

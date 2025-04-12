@@ -61,7 +61,7 @@ public class SearchFragment extends Fragment {
         searchView = view.findViewById(R.id.searchView);
 
         searchView.setIconifiedByDefault(false);
-        searchView.clearFocus();  // Không focus bàn phím lúc đầu
+        searchView.clearFocus();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -126,7 +126,6 @@ public class SearchFragment extends Fragment {
         });
     }
 
-    // ✅ Hàm chuẩn hóa bỏ dấu tiếng Việt + chữ đ → d
     private String removeAccents(String input) {
         String normalized = Normalizer.normalize(input, Normalizer.Form.NFD);
         return normalized.replaceAll("\\p{InCombiningDiacriticalMarks}+", "")

@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Ảnh nền -->
         <ImageView
             android:id="@+id/imageViewAlbumBackground"
             android:layout_width="match_parent"
@@ -22,13 +21,11 @@
             android:src="@drawable/allsongalbum"
             android:contentDescription="Ảnh nền album" />
 
-        <!-- Overlay đen mờ -->
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#40000000" />
 
-        <!-- Nội dung chữ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -6,7 +6,6 @@
     android:background="#252525"
     android:padding="12dp">
 
-    <!-- 🎵 Tên bài hát (center) -->
     <TextView
         android:id="@+id/TextViewSongTitle"
         android:layout_width="match_parent"
@@ -19,7 +18,6 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <!-- ⏱ Seekbar và thời gian -->
     <LinearLayout
         android:id="@+id/layout_seek"
         android:layout_width="match_parent"
@@ -58,7 +56,6 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- 🎧 Điều khiển phát nhạc -->
     <LinearLayout
         android:id="@+id/ll_player_controls"
         android:layout_width="match_parent"
@@ -69,7 +66,6 @@
         android:orientation="horizontal"
         android:weightSum="6">
 
-        <!-- 🔁 Replay -->
         <ImageButton
             android:id="@+id/ImageButtonReplay"
             android:layout_width="0dp"
@@ -80,7 +76,6 @@
             android:src="@drawable/undo_icon"
             app:tint="@android:color/white" />
 
-        <!-- ⏮ Previous -->
         <ImageButton
             android:id="@+id/ImageButtonPrevious"
             android:layout_width="0dp"
@@ -90,7 +85,6 @@
             android:contentDescription="Previous"
             android:src="@drawable/previous_icon" />
 
-        <!-- ▶️ Play -->
         <ImageButton
             android:id="@+id/ImageButtonPlay"
             android:layout_width="0dp"
@@ -100,7 +94,6 @@
             android:contentDescription="Play/Pause"
             android:src="@drawable/play_icon" />
 
-        <!-- ⏭ Next -->
         <ImageButton
             android:id="@+id/ImageButtonNext"
             android:layout_width="0dp"
@@ -110,7 +103,6 @@
             android:contentDescription="Next"
             android:src="@drawable/next_icon" />
 
-        <!-- ❤️ Favorite -->
         <ImageButton
             android:id="@+id/ImageButtonFavorite"
             android:layout_width="0dp"

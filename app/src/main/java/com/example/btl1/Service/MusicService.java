@@ -94,7 +94,6 @@ public class MusicService extends Service {
             mediaPlayer.prepare();
             mediaPlayer.start();
 
-            // Gán listener hoàn tất nếu có
             if (onCompletionListener != null) {
                 mediaPlayer.setOnCompletionListener(onCompletionListener);
             }
@@ -264,7 +263,6 @@ public class MusicService extends Service {
         super.onDestroy();
     }
 
-    // Giao diện callback cho nút "Next/Prev" trong notification
     public interface PlaybackListener {
         void onNext();
         void onPrev();

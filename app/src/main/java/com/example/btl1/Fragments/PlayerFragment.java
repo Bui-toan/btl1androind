@@ -1,7 +1,6 @@
 package com.example.btl1.Fragments;
 
 import android.animation.ObjectAnimator;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.GestureDetector;
@@ -102,7 +101,6 @@ public class PlayerFragment extends Fragment {
 
         setupDiscAnimation();
 
-        // ✅ Xử lý vuốt xuống để đóng
         gestureDetector = new GestureDetector(requireContext(), new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {

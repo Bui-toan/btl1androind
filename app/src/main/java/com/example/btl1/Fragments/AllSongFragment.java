@@ -40,7 +40,7 @@ public class AllSongFragment extends ListFragment {
         String queryText();
         void currentSong(SongsList song);
         void getLength(int length);
-        String getCurrentPath(); // ✅ lấy path bài đang phát
+        String getCurrentPath();
     }
 
     public static AllSongFragment newInstance(int imageResId) {
@@ -79,7 +79,7 @@ public class AllSongFragment extends ListFragment {
         imageAlbum.setImageResource(albumImageResId);
 
         listView = view.findViewById(R.id.ListViewSong);
-        currentPlayingPath = callback.getCurrentPath(); // ✅ lấy path hiện tại
+        currentPlayingPath = callback.getCurrentPath();
         setContent();
     }
 
@@ -107,7 +107,7 @@ public class AllSongFragment extends ListFragment {
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             SongsList song = finalIsFiltered ? filteredList.get(position) : songsList.get(position);
-            currentPlayingPath = song.getPath(); // ✅ lưu lại path đang phát
+            currentPlayingPath = song.getPath();
 
             callback.onDataPass(song.getSongsTitle(), song.getPath());
             callback.fullSongList(songsList, songsList.indexOf(song));

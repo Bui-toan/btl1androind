@@ -22,17 +22,15 @@ public class SongAdapter extends ArrayAdapter<SongsList> implements Filterable {
 
     private final Context mContext;
     private final ArrayList<SongsList> songList;
-    private final String playingPath; // ✅ đường dẫn bài hát đang phát
+    private final String playingPath;
 
-    // ✅ Constructor cũ (không highlight)
     public SongAdapter(Context context, ArrayList<SongsList> songs) {
         super(context, 0, songs);
         this.mContext = context;
         this.songList = songs;
-        this.playingPath = null; // không so sánh
+        this.playingPath = null;
     }
 
-    // ✅ Constructor mới (highlight)
     public SongAdapter(Context context, ArrayList<SongsList> songs, String playingPath) {
         super(context, 0, songs);
         this.mContext = context;
@@ -59,7 +57,6 @@ public class SongAdapter extends ArrayAdapter<SongsList> implements Filterable {
         holder.tvTitle.setText(currentSong.getSongsTitle());
         holder.tvSubtitle.setText(currentSong.getArtistTitle());
 
-        // ✅ Highlight bài đang phát
         if (playingPath != null && playingPath.equals(currentSong.getPath())) {
             convertView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorPrimaryDark));
             holder.tvTitle.setTextColor(Color.WHITE);

@@ -6,7 +6,6 @@
     android:background="@drawable/background"
     android:padding="10dp">
 
-    <!-- Ảnh album -->
     <ImageView
         android:id="@+id/ImageView"
         android:layout_width="48dp"
@@ -16,7 +15,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/ic_music_player" />
 
-    <!-- Icon 3 chấm dọc (nằm ngang với ImageView) -->
     <ImageView
         android:id="@+id/IconMore"
         android:layout_width="24dp"
@@ -30,7 +28,6 @@
         android:scaleType="centerInside"
         android:src="@drawable/ic_more_vert" />
 
-    <!-- Tên bài hát -->
     <TextView
         android:id="@+id/TextViewSongsTitle"
         android:layout_width="match_parent"
@@ -46,7 +43,6 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
-    <!-- Tên nghệ sĩ -->
     <TextView
         android:id="@+id/TextViewArtistTitle"
         android:layout_width="match_parent"

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.btl1">
 
-    <!-- Quyền cần thiết cho truy cập và chỉnh sửa file nhạc -->
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -19,7 +18,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Btl1">
 
-        <!-- MainActivity chính -->
         <activity
             android:name=".Activity.MainActivity"
             android:exported="true">

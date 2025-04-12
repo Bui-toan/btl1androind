@@ -6,7 +6,6 @@
     android:background="#252525"
     android:padding="16dp">
 
-    <!-- 🔙 Nút Back -->
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="36dp"
@@ -22,7 +21,6 @@
         android:src="@drawable/iconback"
         app:tint="@android:color/white" />
 
-    <!-- Ảnh đại diện và tên bài hát -->
     <ImageView
         android:id="@+id/imgAlbumArt"
         android:layout_width="290dp"
@@ -34,7 +32,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/ic_music_player" />
 
-    <!-- Giao diện điều khiển nhạc nằm dưới cùng -->
     <include
         android:id="@+id/include_player_controls"
         layout="@layout/player_layout"

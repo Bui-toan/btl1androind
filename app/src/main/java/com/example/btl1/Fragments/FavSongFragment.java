@@ -125,7 +125,7 @@ public class FavSongFragment extends ListFragment {
                 .setNegativeButton(R.string.no, null)
                 .setPositiveButton(R.string.yes, (dialog, which) -> {
                     favoritesOperations.removeSong(songPath);
-                    setContent(); // cập nhật lại
+                    setContent();
                 })
                 .show();
     }
@@ -145,6 +145,6 @@ public class FavSongFragment extends ListFragment {
         void fullSongList(ArrayList<SongsList> songList, int position);
         int getPosition();
         String queryText();
-        String getCurrentPath(); // ✅ thêm hàm này để highlight
+        String getCurrentPath();
     }
 }

@@ -18,7 +18,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.example.btl1.Fragments.AlbumFragment;
 import com.example.btl1.Fragments.AllSongFragment;
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void setupBottomNav() {
-        setSelectedTab(R.id.tabHome); // Default tab
+        setSelectedTab(R.id.tabHome);
 
         tabHome.setOnClickListener(v -> {
             setSelectedTab(R.id.tabHome);
@@ -100,13 +99,13 @@ public class MainActivity extends AppCompatActivity implements
             textHome.setTextColor(getColor(R.color.purple_700));
             iconSearch.setColorFilter(getColor(android.R.color.darker_gray));
             textSearch.setTextColor(getColor(android.R.color.darker_gray));
-            loadTabFragment(new AlbumFragment(), false); // <--- hiệu ứng lùi về
+            loadTabFragment(new AlbumFragment(), false);
         } else if (tabId == R.id.tabSearch) {
             iconSearch.setColorFilter(getColor(R.color.purple_700));
             textSearch.setTextColor(getColor(R.color.purple_700));
             iconHome.setColorFilter(getColor(android.R.color.darker_gray));
             textHome.setTextColor(getColor(android.R.color.darker_gray));
-            loadTabFragment(new SearchFragment(), true); // <--- hiệu ứng đi tới
+            loadTabFragment(new SearchFragment(), true);
         }
     }
 
@@ -124,10 +123,10 @@ public class MainActivity extends AppCompatActivity implements
     public void loadAlbumFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(
-                        R.anim.scale_in_center,   // fragment album mới mở vào
-                        R.anim.scale_out_center,  // fragment hiện tại thoát ra
-                        R.anim.scale_in_center,   // khi back: album hiện lại
-                        R.anim.scale_out_center   // khi back: album thoát
+                        R.anim.scale_in_center,
+                        R.anim.scale_out_center,
+                        R.anim.scale_in_center,
+                        R.anim.scale_out_center
                 )
                 .replace(R.id.frame_container, fragment)
                 .addToBackStack(null)

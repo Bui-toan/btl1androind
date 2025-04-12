@@ -23,7 +23,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new AllSongFragment();
             case 1:
-                // ✅ Dùng đúng newInstance và truyền image nếu muốn
                 return FavSongFragment.newInstance(R.drawable.allsongalbum);
             default:
                 return null;
